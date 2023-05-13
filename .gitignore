@@ -1,3 +1,8 @@
+# ADDED BY BROOKS
+backend/venv/
+
+# ADDED BY GITHUB TEMPLATE
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -17,6 +17,7 @@ function dataCallback() {
         getDate();
         dataDiv = document.getElementById('graph-container');
         // Set current data text
+        console.log(xhr.responseText);
         dataDiv.innerHTML = xhr.responseText;
     }
 }
@@ -24,6 +25,7 @@ function dataCallback() {
 // Sets the date and time displayed
 function getDate() {
     date = new Date().toString();
+    console.log(date);
     document.getElementById('time-container').textContent
         = date;
 }
@@ -34,7 +36,8 @@ function getGraph() {
     xhr = getXmlHttpRequestObject();
     xhr.onreadystatechange = dataCallback;
     // asynchronous requests
-    xhr.open("GET", "http://localhost:6969", true);
+    // xhr.open("GET", "http://localhost:6969/graph", true); // note: can pass variables in this GET request
+    xhr.open("GET", "http://127.0.0.1:8080/graph", true);
     // Send the request over the network
-    xhr.send(null);
+    xhr.send();
 }

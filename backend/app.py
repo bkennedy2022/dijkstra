@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-from algorithm import Algorithm
+from algorithm import Graph
 
 app = Flask(__name__)
 CORS(app) # enable CORS for all origins (for now...)
@@ -14,21 +14,20 @@ def hello():
 @app.route("/graph", methods=["GET"]) 
 def graph():
     print("loading sample graph data...")
-    with open("backend/graphSample.txt", "r") as f:
-        # print(f.read())
-        # matrix = f.read()
+    with open("backend/graphSample4.txt", "r") as f:
 
-        matrix = []
+        # convert text file to list
+        graphList = []
         for row in f:
-            matrix.append([int(x) for x in row.split()])
+            graphList.append([int(x) for x in row.split()])
 
-        print(matrix)
-
-        g = Algorithm(len(matrix))
-        g.graph = matrix
+        # run Dijkstra
+        g = Graph(9)
+        print(graphList)
+        g.addEdges(graphList)
         g.dijkstra(0)
 
-        return matrix
+        return graphList
 
 # serves project locally without needing to set flask environment variables
 if __name__ == "__main__":

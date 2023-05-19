@@ -5,10 +5,35 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="public/css/style.css"/>
         <script src="https://d3js.org/d3.v6.js"></script>
+        <link rel="shortcut icon" href="">
     </header>
 
     <body>
-        <script src="public/js/main.js"></script>
+        <!-- <script src="http://127.0.0.1:8080/socket.io/socket.io.js"></script> -->
+        <!-- <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+        <script>
+            var socket = io();
+        </script> -->
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <!-- <script src="/socket.io/socket.io.js"></script> -->
+        <!-- <script src="/socket.io/socket.io.js"></script> -->
+        <!-- <script type="module">
+            // import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+            // import io from '/socket.io-client'
+            import * as io from 'socket.io-client';
+          </script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+        <script type="text/javascript" charset="utf-8">
+            var socket = io();
+            socket.on('connect', function() {
+                socket.emit('my event', {data: 'I\'m connected!'});
+            });
+        </script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+            ˓→integrity="sha512-q/
+            ˓→dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==
+            ˓→" crossorigin="anonymous"></script>
+        <script src="public/js/main.js" type="text/javascript" charset="utf-8"></script>
         <div><span>Last update: </span><span id="time-container"></span></div>
         <button onclick="getGraph()">Get graph data</button>
         <div id="graph-container"></div>
